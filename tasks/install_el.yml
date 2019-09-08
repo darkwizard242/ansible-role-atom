@@ -1,0 +1,19 @@
+---
+# tasks file for atom - EL
+
+- name: Adding repository {{ atom_repo_el }} on EL based systems.
+  yum_repository:
+    name: "{{ atom_repo_el_name }}"
+    description: "{{ atom_repo_el_description }}"
+    baseurl: "{{ atom_repo_el }}"
+    gpgcheck: "{{ atom_repo_el_gpgcheck }}"
+    gpgkey: "{{ atom_gpg_key }}"
+    repo_gpgcheck: "{{ atom_repo_el_repogpgcheck }}"
+    file: "{{ atom_repo_el_filename }}"
+    state: "{{ atom_repo_desired_state }}"
+    enabled: "{{ atom_repo_el_enabled }}"
+- name: Installing {{ atom_app }} on EL based systems.
+  yum:
+    name: "{{ atom_app }}"
+    state: "{{ atom_desired_state }}"
+    update_cache: yes

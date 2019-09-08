@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  role_name: atom
+  author: Ali Muhammad
+  description: Role for dynamically installing or uninstalling 'atom' package.
+  company: none
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - atom
+    - system
+    - os
+    - archive
+    - unarchive
+    - zip
+
+dependencies: []

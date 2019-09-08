@@ -1,0 +1,15 @@
+---
+# defaults file for atom
+atom_app: atom
+atom_desired_state: present
+atom_gpg_key: https://packagecloud.io/AtomEditor/atom/gpgkey
+atom_repo_desired_state: present
+atom_repo_debian: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+atom_repo_debian_filename: atom
+atom_repo_el: https://packagecloud.io/AtomEditor/atom/el/7/$basearch
+atom_repo_el_name: Atom
+atom_repo_el_description: Atom Editor
+atom_repo_el_gpgcheck: no
+atom_repo_el_repogpgcheck: yes
+atom_repo_el_enabled: yes
+atom_repo_el_filename: atom
