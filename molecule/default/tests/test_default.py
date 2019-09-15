@@ -8,6 +8,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 ATOM_PACKAGE = 'atom'
 ATOM_BINARY_PATH = '/usr/bin/atom'
+APM_BINARY_PATH = '/usr/bin/apm'
 ATOM_DEBIAN_REPO = '/etc/apt/sources.list.d/atom.list'
 ATOM_EL_REPO = '/etc/yum.repos.d/atom.repo'
 
@@ -37,3 +38,16 @@ def test_atom_repo_file(host):
 def test_atom_binary_which(host):
     host.check_output('which atom') == ATOM_BINARY_PATH or \
       host.check_output('whereis atom') == ATOM_BINARY_PATH
+
+
+def test_apm_binary_exists(host):
+    host.file('APM_BINARY_PATH').exists
+
+
+def test_apm_binary_file(host):
+    host.file('APM_BINARY_PATH').is_symlink
+
+
+def test_apm_binary_which(host):
+    host.check_output('which apm') == APM_BINARY_PATH or \
+      host.check_output('whereis apm') == APM_BINARY_PATH
