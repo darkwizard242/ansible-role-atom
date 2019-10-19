@@ -6,48 +6,41 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-ATOM_PACKAGE = 'atom'
-ATOM_BINARY_PATH = '/usr/bin/atom'
-APM_BINARY_PATH = '/usr/bin/apm'
-ATOM_DEBIAN_REPO = '/etc/apt/sources.list.d/atom.list'
-ATOM_EL_REPO = '/etc/yum.repos.d/atom.repo'
-
-
 def test_atom_package_installed(host):
-    host.package("ATOM_PACKAGE").is_installed
+    assert host.package("atom").is_installed
 
 
 def test_atom_binary_exists(host):
-    host.file('ATOM_BINARY_PATH').exists
+    assert host.file('/usr/bin/atom').exists
 
 
 def test_atom_binary_file(host):
-    host.file('ATOM_BINARY_PATH').is_file
+    assert host.file('/usr/bin/atom').is_file
 
 
 def test_atom_repo_exists(host):
-    host.file('ATOM_DEBIAN_REPO').exists or \
-      host.file('ATOM_EL_REPO').exists
+    assert host.file('/etc/apt/sources.list.d/atom.list').exists or \
+      host.file('/etc/yum.repos.d/atom.repo').exists
 
 
 def test_atom_repo_file(host):
-    host.file('ATOM_DEBIAN_REPO').is_file or \
-      host.file('ATOM_EL_REPO').is_file
+    assert host.file('/etc/apt/sources.list.d/atom.list').is_file or \
+      host.file('/etc/yum.repos.d/atom.repo').is_file
 
 
 def test_atom_binary_which(host):
-    host.check_output('which atom') == ATOM_BINARY_PATH or \
-      host.check_output('whereis atom') == ATOM_BINARY_PATH
+    assert host.check_output('which atom') == '/usr/bin/atom' or \
+      host.check_output('whereis atom') == '/usr/bin/atom'
 
 
 def test_apm_binary_exists(host):
-    host.file('APM_BINARY_PATH').exists
+    assert host.file('/usr/bin/apm').exists
 
 
 def test_apm_binary_file(host):
-    host.file('APM_BINARY_PATH').is_symlink
+    assert host.file('/usr/bin/apm').is_symlink
 
 
 def test_apm_binary_which(host):
-    host.check_output('which apm') == APM_BINARY_PATH or \
-      host.check_output('whereis apm') == APM_BINARY_PATH
+    assert host.check_output('which apm') == '/usr/bin/apm' or \
+      host.check_output('whereis apm') == '/usr/bin/apm'
