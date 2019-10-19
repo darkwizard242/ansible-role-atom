@@ -20,7 +20,7 @@ def test_atom_binary_file(host):
 
 def test_atom_repo_exists(host):
     assert host.file('/etc/apt/sources.list.d/atom.list').exists or \
-      assert host.file('/etc/yum.repos.d/atom.repo').exists
+      host.file('/etc/yum.repos.d/atom.repo').exists
 
 
 def test_atom_repo_file(host):
