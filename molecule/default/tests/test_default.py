@@ -30,7 +30,7 @@ def test_atom_repo_file(host):
 
 def test_atom_binary_which(host):
     assert host.check_output('which atom') == '/usr/bin/atom' or \
-      host.check_output('whereis atom') == ''/usr/bin/atom'
+      host.check_output('whereis atom') == '/usr/bin/atom'
 
 
 def test_apm_binary_exists(host):
