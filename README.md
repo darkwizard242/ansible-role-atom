@@ -1,18 +1,16 @@
+[![Build Status](https://travis-ci.com/darkwizard242/ansible-role-atom.svg?branch=master)](https://travis-ci.com/darkwizard242/ansible-role-atom) ![Ansible Role](https://img.shields.io/ansible/role/43192?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/43192?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/43192?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-atom&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-atom) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-atom?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-atom?color=orange&style=flat-square)
 
-Ansible Role: atom
-=========
+# Ansible Role: atom
 
-Role to install (_by default_) `atom` package  or uninstall (_if  passed as var_)  on **Ubuntu** and **CentOS** systems.
+Role to install (_by default_) `atom` package or uninstall (_if passed as var_) on **Ubuntu** and **CentOS** systems.
 
-Requirements
-------------
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
-Available variables are listed below (located in  `defaults/main.yml`):
+Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 atom_app: atom
@@ -41,7 +39,7 @@ Variable `atom_repo_desired_state`: State for repo to download Atom from. Can ei
 Variable `atom_repo_debian`: Atom's repo link for Debian based systems.
 
 Variable `atom_repo_debian_filename`: Name of file to save for atom's repo in `/etc/apt/sources.list.d/`
- 
+
 Variable `atom_repo_el`: Atom's repo link for EL based systems.
 
 Variable `atom_repo_el_name`: Atom repo name for EL based systems.
@@ -56,15 +54,14 @@ Variable `atom_repo_el_enabled`: Boolean operation for setting repository to ena
 
 Variable `atom_repo_el_filename`: Name of file to save for atom's repo in `/etc/yum.repos.d/`
 
-Dependencies
-------------
+## Dependencies
 
 None
 
-Example Playbook
-----------------
+## Example Playbook
 
 For default behaviour of role (i.e. installation of **atom** package) in ansible playbooks.
+
 ```yaml
 - hosts: servers
   roles:
@@ -72,6 +69,7 @@ For default behaviour of role (i.e. installation of **atom** package) in ansible
 ```
 
 For customizing behavior of role (i.e. installation of latest **atom** package) in ansible playbooks.
+
 ```yaml
 - hosts: servers
   roles:
@@ -81,6 +79,7 @@ For customizing behavior of role (i.e. installation of latest **atom** package) 
 ```
 
 For customizing behavior of role (i.e. un-installation of **atom** package) in ansible playbooks.
+
 ```yaml
 - hosts: servers
   roles:
@@ -89,12 +88,10 @@ For customizing behavior of role (i.e. un-installation of **atom** package) in a
         atom_desired_state: absent
 ```
 
-License
--------
+## License
 
 [MIT](https://github.com/darkwizard242/ansible-role-atom/blob/master/LICENSE)
 
-Author Information
-------------------
+## Author Information
 
 This role was created by [Ali Muhammad](https://www.linkedin.com/in/ali-muhammad-759791130/).
