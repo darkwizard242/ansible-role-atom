@@ -2,7 +2,7 @@
 
 # Ansible Role: atom
 
-Role to install (_by default_) `atom` package or uninstall (_if passed as var_) on **Ubuntu** and **CentOS** systems.
+Role to install (_by default_) [atom](https://atom.io/) package or uninstall (_if passed as var_) on **Ubuntu** and **CentOS** systems.
 
 ## Requirements
 
