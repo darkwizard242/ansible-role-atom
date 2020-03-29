@@ -7,16 +7,13 @@
     state: present
     force_apt_get: yes
     update_cache: yes
-- name: Gather package facts to verify if apt-transport-https is installed on Debian based systems
-  package_facts:
-    manager: apt
-- name: Install apt-transport-https if currently not in installed state on Debian based systems.
+- name: Install apt-transport-https on Debian based systems.
   apt:
     name: apt-transport-https
     state: present
     force_apt_get: yes
     update_cache: yes
-  when: packages['apt-transport-https'] is not defined
+  # when: packages['apt-transport-https'] is not defined
 - name: Add gpg signing key for {{ atom_app  }}.
   apt_key:
     url: "{{ atom_gpg_key }}"
