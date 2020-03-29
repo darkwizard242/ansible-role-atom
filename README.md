@@ -59,7 +59,7 @@ For default behaviour of role (i.e. installation of **atom** package) in ansible
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.atom
+    - darkwizard242.atom
 ```
 
 For customizing behavior of role (i.e. installation of latest **atom** package) in ansible playbooks.
@@ -67,9 +67,9 @@ For customizing behavior of role (i.e. installation of latest **atom** package) 
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.atom
-      vars:
-        atom_desired_state: latest
+    - darkwizard242.atom
+  vars:
+    atom_desired_state: latest
 ```
 
 For customizing behavior of role (i.e. un-installation of **atom** package) in ansible playbooks.
@@ -77,9 +77,9 @@ For customizing behavior of role (i.e. un-installation of **atom** package) in a
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.atom
-      vars:
-        atom_desired_state: absent
+    - darkwizard242.atom
+  vars:
+    atom_desired_state: absent
 ```
 
 ## License
