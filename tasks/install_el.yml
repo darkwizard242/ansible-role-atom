@@ -1,7 +1,7 @@
 ---
-# tasks file for atom - EL
+# tasks file for atom - EL Family
 
-- name: Adding repository {{ atom_repo_el }} on EL based systems.
+- name: EL Family | Adding repository {{ atom_repo_el }}
   yum_repository:
     name: "{{ atom_repo_el_name }}"
     description: "{{ atom_repo_el_description }}"
@@ -12,7 +12,7 @@
     file: "{{ atom_repo_el_filename }}"
     state: "{{ atom_repo_desired_state }}"
     enabled: "{{ atom_repo_el_enabled }}"
-- name: Installing {{ atom_app }} on EL based systems.
+- name: EL Family | Installing {{ atom_app }}
   yum:
     name: "{{ atom_app }}"
     state: "{{ atom_desired_state }}"
