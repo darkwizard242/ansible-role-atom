@@ -13,7 +13,7 @@
     state: present
     force_apt_get: yes
     update_cache: yes
-  # when: packages['apt-transport-https'] is not defined
+    # when: packages['apt-transport-https'] is not defined
 - name: Debian/Ubuntu Family | Add gpg signing key for {{ atom_app  }}.
   apt_key:
     url: "{{ atom_gpg_key }}"
