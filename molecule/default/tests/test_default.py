@@ -38,7 +38,7 @@ def test_atom_repo_exists(host):
     Tests if atom repo file exists.
     """
     assert host.file(REPO_DEBIAN_FILE).exists or \
-    host.file(REPO_EL_FILE).exists
+        host.file(REPO_EL_FILE).exists
 
 
 def test_atom_repo_file(host):
@@ -46,7 +46,7 @@ def test_atom_repo_file(host):
     Tests if atom repo file is file type.
     """
     assert host.file(REPO_DEBIAN_FILE).is_file or \
-    host.file(REPO_EL_FILE).is_file
+        host.file(REPO_EL_FILE).is_file
 
 
 def test_atom_binary_which(host):
@@ -54,4 +54,4 @@ def test_atom_binary_which(host):
     Tests the output to confirm atom's binary location.
     """
     assert host.check_output('which atom') == PACKAGE_BINARY or \
-    host.check_output('whereis atom') == PACKAGE_BINARY
+        host.check_output('whereis atom') == PACKAGE_BINARY
