@@ -24,7 +24,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.asciinema'
+        path: 'darkwizard242.atom'
         fetch-depth: 0
 
     - name: SonarCloud Scan
@@ -44,14 +44,14 @@ jobs:
     strategy:
       max-parallel: 6
       matrix:
-        IMAGE: [ubuntu-18.04, ubuntu-16.04, centos-7, debian-buster, debian-stretch]
+        IMAGE: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04, centos-7, debian-buster, debian-stretch]
 
     steps:
 
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.asciinema'
+        path: 'darkwizard242.atom'
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
