@@ -12,6 +12,7 @@
     file: "{{ atom_repo_el_filename }}"
     state: "{{ atom_repo_desired_state }}"
     enabled: "{{ atom_repo_el_enabled }}"
+
 - name: EL Family | Installing {{ atom_app }}
   yum:
     name: "{{ atom_app }}"
