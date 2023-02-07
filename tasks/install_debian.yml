@@ -2,30 +2,34 @@
 # tasks file for atom - Debian/Ubuntu Family
 
 - name: Debian/Ubuntu Family | Install python3-apt, required for package_facts.
-  apt:
+  ansible.builtin.apt:
     name: python3-apt
     state: present
     force_apt_get: yes
     update_cache: yes
+    
 - name: Debian/Ubuntu Family | Install apt-transport-https
-  apt:
+  ansible.builtin.apt:
     name: apt-transport-https
     state: present
     force_apt_get: yes
     update_cache: yes
     # when: packages['apt-transport-https'] is not defined
+
 - name: Debian/Ubuntu Family | Add gpg signing key for {{ atom_app  }}.
-  apt_key:
+  ansible.builtin.apt_key:
     url: "{{ atom_gpg_key }}"
     state: present
+
 - name: Debian/Ubuntu Family | Adding repository {{ atom_repo_debian }}
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ atom_repo_debian }}"
     state: "{{ atom_repo_desired_state }}"
     filename: "{{ atom_repo_debian_filename }}"
     update_cache: yes
+
 - name: Debian/Ubuntu Family | Installing {{ atom_app }}
-  apt:
+  ansible.builtin.apt:
     name: "{{ atom_app }}"
     state: "{{ atom_desired_state }}"
     force_apt_get: yes
