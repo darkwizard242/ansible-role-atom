@@ -2,7 +2,7 @@
 # tasks file for atom - EL Family
 
 - name: EL Family | Adding repository {{ atom_repo_el }}
-  yum_repository:
+  ansible.builtin.yum_repository:
     name: "{{ atom_repo_el_name }}"
     description: "{{ atom_repo_el_description }}"
     baseurl: "{{ atom_repo_el }}"
@@ -14,7 +14,7 @@
     enabled: "{{ atom_repo_el_enabled }}"
 
 - name: EL Family | Installing {{ atom_app }}
-  yum:
+  ansible.builtin.yum:
     name: "{{ atom_app }}"
     state: "{{ atom_desired_state }}"
     update_cache: yes
